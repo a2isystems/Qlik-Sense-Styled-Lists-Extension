@@ -1,3 +1,6 @@
+RN: Added a hide option, so that only data related to the selection is shown.
+
+
 QlikView have an option to display the filters/listboxes in few styles. Such functionality is missing from Sense (for now).
 
 This extension will give options to display listboxes with more options than default object.
