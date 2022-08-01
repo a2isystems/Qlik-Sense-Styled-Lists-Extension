@@ -219,13 +219,20 @@ define(["jquery", "text!./style.css"], function ($, cssContent) {
 				} else {
 					style = ' style="' + layout.btninactive + '"';
 				}
+				
+				var hide = false;
+				if (data[i].qState === "X") {
+					hide = true;
+				}
 
-				if (objtype != 'button') {
-					html += '<input type="' + objtype + '" name="' + layout.qInfo.qId + '" ' + checked + ' class="data state' + data[i].qState + '" data-value="'
-						+ data[i].qElemNumber + '"><label ' + style + '>' + text + '</label>' + orientation;
-				} else {
-					html += '<input ' + style + '  type="' + objtype + '" name="' + layout.qInfo.qId + ' class="data state' + data[i].qState + '" data-value="'
-						+ data[i].qElemNumber + '" value="' + text + '"> ' + orientation;
+				if(!hide) {
+					if (objtype != 'button') {
+						html += '<input type="' + objtype + '" name="' + layout.qInfo.qId + '" ' + checked + ' class="data state' + data[i].qState + '" data-value="'
+							+ data[i].qElemNumber + '"><label ' + style + '>' + text + '</label>' + orientation;
+					} else {
+						html += '<input ' + style + '  type="' + objtype + '" name="' + layout.qInfo.qId + ' class="data state' + data[i].qState + '" data-value="'
+							+ data[i].qElemNumber + '" value="' + text + '"> ' + orientation;
+					}					
 				}
 			}
 
